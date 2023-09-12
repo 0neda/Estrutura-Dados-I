@@ -25,8 +25,8 @@ namespace stringStackClass{
         (agora com o valor de top após o +1) como a string passada como parâmetro na função*/
 
         public string Pop(){
-            if(top <= 0){
-                Console.WriteLine("Stack Underflow"); // Caso TOP seja MENOR ou IGUAL a ZERO, retorna stack underflow (Itens abaixo de 0 ou nulos (?))
+            if(top < 0){
+                Console.WriteLine("Stack Underflow"); // Caso TOP seja MENOR QUE ZERO, retorna stack underflow (Itens abaixo de 0 ou nulos (?))
                 return "ERRO"; // Retorna uma string de ERRO
             }
             string texto = stringsOnStack[top]; // DEFINE O VALOR DE TEXTO COMO O VALOR DO ÍNDICE DA NOSSA PILHA
@@ -43,6 +43,12 @@ namespace stringStackClass{
                 return;
             }
             Console.WriteLine($"O topo da pilha é: {stringsOnStack[top]}"); // RETORNA O VALOR DO TOPO DA PILHA CASO TOP NÃO SEJA MENOR QUE 0
+        }
+
+        public void Clear(){
+            if(top >= 0){
+                top = -1;
+            }
         }
 
         public void printStack(){
