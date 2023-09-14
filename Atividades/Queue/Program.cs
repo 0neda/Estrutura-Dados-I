@@ -7,7 +7,3 @@ fila.Enqueue(37);
 fila.Enqueue(5);
 
 fila.PrintQueue();
-
-fila.Dequeue();
-
-fila.PrintQueue();

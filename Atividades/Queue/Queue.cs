@@ -23,11 +23,11 @@ namespace QueueClass{
         }
 
         public int Dequeue(){
-            if(actual <= 0){
+            if(actual < 0){
                 Console.WriteLine("Queue is empty.");
                 return 0;
             }
-            int value = queue[actual];
+            int value = queue[first];
             first += 1;
 
             return value;
@@ -38,7 +38,7 @@ namespace QueueClass{
                 Console.WriteLine("Queue is empty.");
                 return;
             }
-            Console.WriteLine($"O primeiro item da fila é: {queue[actual]}");
+            Console.WriteLine($"O primeiro item da fila é: {queue[first]}");
         }
 
         public void PrintQueue(){
