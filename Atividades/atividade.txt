@@ -1,0 +1,10 @@
+Escrevam um programa que seja capaz de interagir com o usuário utilizando Console.WriteLine() e Console.ReadLine()
+Você deve solicitar ao usuário os pares de chave/valor para a tabela hash que irá armazenar respectivamente CPF e Nome.
+
+O programa deve:
+1 - Checar se a chave já foi inserida préviamente.
+2 - Realizar as devidas validações para evitar a interrupção por meio de restrição (try/catch). (Exceções/Exceptions)
+
+Ao final, o programa deve percorrer e exibir todos os dados inseridos pelo usuário na tela.
+
+while, for, case
