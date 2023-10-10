@@ -16,9 +16,8 @@ while (Rodando)
             string CadastroPessoaFisica = Console.ReadLine();
             if(!Informacoes.ContainsValue(CadastroPessoaFisica))
             {
-                Informacoes.Add(QuantiaDados + "CPF", CadastroPessoaFisica);
+                Informacoes.Add("CPF" + QuantiaDados, CadastroPessoaFisica);
                 Console.WriteLine("CPF adicionado com sucesso");
-                Console.WriteLine("Key = {0} - Value {1} - Quantia {2}", QuantiaDados, CadastroPessoaFisica, QuantiaDados);
                 QuantiaDados += 1;
                 EstadoNome = false;
             }
@@ -34,9 +33,8 @@ while (Rodando)
 
             if(!Informacoes.ContainsValue(Nome))
             {
-                Informacoes.Add(QuantiaDados, Nome);
+                Informacoes.Add("Nome" + QuantiaDados, Nome);
                 Console.WriteLine("Nome adicionado com sucesso");
-                Console.WriteLine("Key = {0} - Value {1} - Quantia {2}", QuantiaDados, Nome, QuantiaDados);
                 EstadoNome = true;
             }
             else
@@ -61,6 +59,6 @@ while (Rodando)
     // Percorrendo a hash com foreach
     Console.WriteLine();
     foreach(DictionaryEntry de in Informacoes){
-        Console.WriteLine("Key = {0} - Value {1}", de.Key, de.Value);
+        Console.WriteLine("{0}:{1}", de.Key, de.Value);
     }
 }
