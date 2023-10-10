@@ -2,7 +2,7 @@
 using System;
  
 class InsertionSort {
-     static void printarArray(int[] data)
+     static void PrintarArray(int[] data)
     {
         int arrMax = data.Length; // Tamanho do escopo da array
         for (int i = 0; i < arrMax; ++i) // Enquanto i for menor que o tamanho do escopo da array
@@ -43,6 +43,6 @@ class InsertionSort {
         int[] arr = { 12, 11, 13, 5, 6 }; // Cria uma array nova com valores pré-definidos, fora de ordem
         InsertionSort ObjetoInsertion = new InsertionSort(); // Cria uma instância chamada Objetoinsertion com a classe acima
         Ordenar(arr); // Ordena a array de acordo com a função criada na classe do InsertionSort
-        printarArray(arr); // Printa a array
+        PrintarArray(arr); // Printa a array
     }
 }
