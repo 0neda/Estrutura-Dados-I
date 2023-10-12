@@ -3,44 +3,65 @@
 Hashtable Informacoes = new Hashtable();
 bool Rodando = true;
 
-int QuantiaDados = 0;
 bool EstadoNome = false;
+bool EstadoCPF = false;
+string Nome = "";
+string CPF = "";
 
 while (Rodando)
 {
     try
     {
-        if(EstadoNome)
-        {           
-            Console.WriteLine("Digite seu CPF (apenas números):");
-            string CadastroPessoaFisica = Console.ReadLine();
-            if(!Informacoes.ContainsValue(CadastroPessoaFisica))
+        if (!EstadoNome)
+        {
+            Console.WriteLine("Digite seu nome:");
+            Nome = Console.ReadLine();
+            if (Nome != "")
             {
-                Informacoes.Add("CPF" + QuantiaDados, CadastroPessoaFisica);
-                Console.WriteLine("CPF adicionado com sucesso");
-                QuantiaDados += 1;
-                EstadoNome = false;
+                if (!Informacoes.ContainsKey(Nome))
+                {
+                    EstadoNome = true;
+                }
+                else
+                {
+                    Console.WriteLine("Nome já cadastrado.");
+                }
             }
             else
             {
-                Console.WriteLine("Este CPF já existe na Hashtable.");
+                Console.WriteLine("Nome inválido.");
             }
         }
-        else
+        if (EstadoNome && !EstadoCPF)
         {
-            Console.WriteLine("Digite um Nome (apenas letras):");
-            string Nome = Console.ReadLine();
-
-            if(!Informacoes.ContainsValue(Nome))
+            Console.WriteLine("Digite seu CPF:");
+            CPF = Console.ReadLine();
+            if (CPF != "")
             {
-                Informacoes.Add("Nome" + QuantiaDados, Nome);
-                Console.WriteLine("Nome adicionado com sucesso");
-                EstadoNome = true;
+                if (!Informacoes.ContainsValue(CPF))
+                {
+                    Informacoes.Add(Nome, CPF);
+                    EstadoCPF = true;
+                }
+                else
+                {
+                    Console.WriteLine("CPF já cadastrado.");
+                }
             }
             else
             {
-                Console.WriteLine("Este nome já existe na Hashtable.");
+                Console.WriteLine("CPF inválido.");
             }
+        }
+        if (EstadoNome && EstadoCPF)
+        {
+            Console.WriteLine("Cadastro concluído com sucesso.");
+            Console.WriteLine();
+            foreach(DictionaryEntry de in Informacoes){
+                Console.WriteLine("{0}:{1}", de.Key, de.Value);
+            }
+            EstadoCPF = false;
+            EstadoNome = false;
         }
     }
 
@@ -57,8 +78,10 @@ while (Rodando)
     }
 
     // Percorrendo a hash com foreach
-    Console.WriteLine();
-    foreach(DictionaryEntry de in Informacoes){
-        Console.WriteLine("{0}:{1}", de.Key, de.Value);
-    }
+}
+
+Console.WriteLine();
+foreach (DictionaryEntry de in Informacoes)
+{
+    Console.WriteLine("{0}:{1}", de.Key, de.Value);
 }
