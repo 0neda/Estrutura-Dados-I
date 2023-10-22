@@ -13,12 +13,9 @@ class InsertionSort {
             }
             else // se não
             {
-                Console.Write(data[i]); // adiciona a data sem vírgula após
+                Console.WriteLine(data[i]); // adiciona a data sem vírgula após e pula uma linha
             }
         }
-            
- 
-        Console.Write("\n"); // pula uma linha
     }
  
     static void Ordenar(int[] data)
