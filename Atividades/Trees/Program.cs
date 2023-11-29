@@ -1,4 +1,4 @@
-﻿using Trees;
+﻿using Tree;
 
 Tree<int> tree = new Tree<int>();
 
