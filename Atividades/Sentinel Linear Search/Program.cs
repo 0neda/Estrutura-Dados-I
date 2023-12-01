@@ -2,8 +2,9 @@
  
 class Program
 {
-    static void sentinelSearch(int[] lista, int tamanho, int valor)
+    static void sentinelSearch(int[] lista, int valor)
     {
+        int tamanho = lista.Length;
         int ultimo = lista[tamanho - 1];
         lista[tamanho - 1] = valor;
         int i = 0;
@@ -24,7 +25,7 @@ class Program
     public static void Main()
     {
         int[] lista = { 10, 20, 180, 30, 60, 50, 110, 100, 70 };
-        sentinelSearch(lista, lista.Length, 70);
+        sentinelSearch(lista, 70);
     }
 }
 
